@@ -6,9 +6,11 @@ domain\Vehiculo.class
 views\ListarVehiculosView$1.class
 domain\VehiculoElectrico.class
 views\Controlador.class
+views\AltaVehiculo.class
 app\Program.class
 views\VehiculoViewModel.class
 views\ListarVehiculosView.class
 domain\Sucursal.class
 views\ListarVehiculosView$2.class
+views\MenuPrincipal.class
 domain\VehiculoTipo.class
