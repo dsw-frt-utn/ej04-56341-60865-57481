@@ -1,5 +1,5 @@
 package views;
-
+import domain.*;
 import data.Persistencia;
 import domain.Vehiculo;
 import domain.VehiculoTipo;
@@ -31,4 +31,17 @@ public class Controlador {
         }
         return new double[] {consumoElectricos, consumoCombustible};
     }
+    public static void registrarNuevoVehiculo(String tipo, String patente, String nombreMarca, String paisMarca, 
+            String modelo, int anio, double capacidadCarga, Sucursal sucursal, 
+            double kwhBase, double kmPorLitro, double litrosExtra) {
+        Marca nuevaMarca = new Marca(nombreMarca, paisMarca);
+        if (tipo.equals("ELECTRICO")) {
+            VehiculoElectrico ve = new VehiculoElectrico(patente, nuevaMarca, modelo, anio, capacidadCarga, sucursal, kwhBase);
+            Persistencia.agregarVehiculo(ve);
+        } else if (tipo.equals("COMBUSTIBLE")) {
+            VehiculoCombustible vc = new VehiculoCombustible(patente, nuevaMarca, modelo, anio, capacidadCarga, sucursal, kmPorLitro, litrosExtra);
+            Persistencia.agregarVehiculo(vc);
+        }
+    }
+
 }
